@@ -1,0 +1,21 @@
+{
+  "documents": 50000,
+  "unique_document_ids": 50000,
+  "unique_titles": 50000,
+  "unique_contents": 50000,
+  "projects": 26,
+  "document_types": 20,
+  "employees": 3000,
+  "unique_employee_ids": 3000,
+  "unique_emails": 3000,
+  "departments": 10,
+  "registered_accounts_initially": 0,
+  "passwords_in_registry_exports": false,
+  "public_documents": 2632,
+  "internal_documents": 44122,
+  "confidential_documents": 2758,
+  "restricted_documents": 488,
+  "knowledge_csv_bytes": 63846006,
+  "project_managers_with_assignments": 56,
+  "project_manager_count": 56
+}

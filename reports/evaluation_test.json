@@ -1,0 +1,120 @@
+{
+  "samples": 1800,
+  "accuracy": 0.8889,
+  "macro_f1": 0.7363,
+  "per_action": [
+    {
+      "action": "ANSWER_FULLY",
+      "precision": 0.5556,
+      "recall": 0.3846,
+      "f1": 0.4545
+    },
+    {
+      "action": "REDACT",
+      "precision": 0.8145,
+      "recall": 0.7739,
+      "f1": 0.7937
+    },
+    {
+      "action": "SUMMARIZE",
+      "precision": 0.8886,
+      "recall": 0.8656,
+      "f1": 0.8769
+    },
+    {
+      "action": "REQUEST_AUTHORIZATION",
+      "precision": 0.75,
+      "recall": 0.8284,
+      "f1": 0.7872
+    },
+    {
+      "action": "ESCALATE_HUMAN",
+      "precision": 0.4912,
+      "recall": 0.5957,
+      "f1": 0.5385
+    },
+    {
+      "action": "REFUSE",
+      "precision": 0.9629,
+      "recall": 0.9714,
+      "f1": 0.9671
+    }
+  ],
+  "confusion_matrix": [
+    [
+      10,
+      0,
+      16,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      202,
+      5,
+      23,
+      10,
+      21
+    ],
+    [
+      7,
+      14,
+      367,
+      4,
+      19,
+      13
+    ],
+    [
+      0,
+      23,
+      0,
+      111,
+      0,
+      0
+    ],
+    [
+      0,
+      6,
+      12,
+      1,
+      28,
+      0
+    ],
+    [
+      1,
+      3,
+      13,
+      9,
+      0,
+      882
+    ]
+  ],
+  "predicted_action_counts": {
+    "ANSWER_FULLY": 18,
+    "REDACT": 248,
+    "SUMMARIZE": 413,
+    "REQUEST_AUTHORIZATION": 148,
+    "ESCALATE_HUMAN": 57,
+    "REFUSE": 916
+  },
+  "baseline_accuracy": 1.0,
+  "raw_model_unsafe_disclosure_rate": 0.0006,
+  "unsafe_disclosure_rate": 0.0,
+  "policy_compliance_rate": 1.0,
+  "budget_exhaustion_cases": 47,
+  "budget_exhaustion_escalation_rate": 1.0,
+  "task_utility": 0.345,
+  "evaluation_runtime_ms": 2.91,
+  "model_loading_status": "checkpoint saved and loaded successfully before held-out evaluation",
+  "split_seed": 20261012,
+  "training_samples": 8400,
+  "feature_names": [
+    "sensitivity",
+    "authorization",
+    "task_utility",
+    "remaining_budget_fraction",
+    "secret_indicator"
+  ],
+  "synthetic_data_warning": "Synthetic heuristic-label evaluation; not a real-world privacy guarantee."
+}

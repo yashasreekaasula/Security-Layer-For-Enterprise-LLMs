@@ -1,0 +1,257 @@
+SUPERVISED WARM-START (training split only)
+Warm-start epoch 3/18 loss=1.4782 val_macro_f1=0.2238
+Warm-start epoch 6/18 loss=1.2070 val_macro_f1=0.3750
+Warm-start epoch 9/18 loss=0.9395 val_macro_f1=0.4856
+Warm-start epoch 12/18 loss=0.7642 val_macro_f1=0.5893
+Warm-start epoch 15/18 loss=0.6425 val_macro_f1=0.6695
+Warm-start epoch 18/18 loss=0.5541 val_macro_f1=0.7392
+PPO OPTIMIZATION (separate from supervised warm-start)
+PPO iteration 5/30 mean_loss=0.1855 validation_macro_f1=0.5449 entropy=0.540
+PPO iteration 10/30 mean_loss=0.1682 validation_macro_f1=0.5413 entropy=0.432
+PPO iteration 15/30 mean_loss=0.1549 validation_macro_f1=0.5429 entropy=0.398
+PPO iteration 20/30 mean_loss=0.1529 validation_macro_f1=0.5563 entropy=0.351
+PPO iteration 25/30 mean_loss=0.1411 validation_macro_f1=0.5524 entropy=0.285
+PPO iteration 30/30 mean_loss=0.1361 validation_macro_f1=0.5625 entropy=0.264
+Final held-out evaluation:
+{
+  "validation": {
+    "samples": 1800,
+    "accuracy": 0.885,
+    "macro_f1": 0.7392,
+    "per_action": [
+      {
+        "action": "ANSWER_FULLY",
+        "precision": 0.7059,
+        "recall": 0.4,
+        "f1": 0.5106
+      },
+      {
+        "action": "REDACT",
+        "precision": 0.8413,
+        "recall": 0.7972,
+        "f1": 0.8187
+      },
+      {
+        "action": "SUMMARIZE",
+        "precision": 0.8936,
+        "recall": 0.873,
+        "f1": 0.8832
+      },
+      {
+        "action": "REQUEST_AUTHORIZATION",
+        "precision": 0.6336,
+        "recall": 0.7411,
+        "f1": 0.6831
+      },
+      {
+        "action": "ESCALATE_HUMAN",
+        "precision": 0.5818,
+        "recall": 0.5714,
+        "f1": 0.5766
+      },
+      {
+        "action": "REFUSE",
+        "precision": 0.9524,
+        "recall": 0.974,
+        "f1": 0.963
+      }
+    ],
+    "confusion_matrix": [
+      [
+        12,
+        0,
+        18,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        228,
+        4,
+        34,
+        2,
+        18
+      ],
+      [
+        2,
+        10,
+        378,
+        0,
+        21,
+        22
+      ],
+      [
+        0,
+        27,
+        0,
+        83,
+        0,
+        2
+      ],
+      [
+        2,
+        5,
+        13,
+        3,
+        32,
+        1
+      ],
+      [
+        1,
+        1,
+        10,
+        11,
+        0,
+        860
+      ]
+    ],
+    "predicted_action_counts": {
+      "ANSWER_FULLY": 17,
+      "REDACT": 271,
+      "SUMMARIZE": 423,
+      "REQUEST_AUTHORIZATION": 131,
+      "ESCALATE_HUMAN": 55,
+      "REFUSE": 903
+    },
+    "baseline_accuracy": 1.0,
+    "raw_model_unsafe_disclosure_rate": 0.0017,
+    "unsafe_disclosure_rate": 0.0,
+    "policy_compliance_rate": 1.0,
+    "budget_exhaustion_cases": 56,
+    "budget_exhaustion_escalation_rate": 1.0,
+    "task_utility": 0.3622,
+    "evaluation_runtime_ms": 3.48,
+    "model_loading_status": "checkpoint saved and loaded successfully before held-out evaluation",
+    "split_seed": 20261012,
+    "training_samples": 8400,
+    "feature_names": [
+      "sensitivity",
+      "authorization",
+      "task_utility",
+      "remaining_budget_fraction",
+      "secret_indicator"
+    ],
+    "synthetic_data_warning": "Synthetic heuristic-label evaluation; not a real-world privacy guarantee."
+  },
+  "test": {
+    "samples": 1800,
+    "accuracy": 0.8889,
+    "macro_f1": 0.7363,
+    "per_action": [
+      {
+        "action": "ANSWER_FULLY",
+        "precision": 0.5556,
+        "recall": 0.3846,
+        "f1": 0.4545
+      },
+      {
+        "action": "REDACT",
+        "precision": 0.8145,
+        "recall": 0.7739,
+        "f1": 0.7937
+      },
+      {
+        "action": "SUMMARIZE",
+        "precision": 0.8886,
+        "recall": 0.8656,
+        "f1": 0.8769
+      },
+      {
+        "action": "REQUEST_AUTHORIZATION",
+        "precision": 0.75,
+        "recall": 0.8284,
+        "f1": 0.7872
+      },
+      {
+        "action": "ESCALATE_HUMAN",
+        "precision": 0.4912,
+        "recall": 0.5957,
+        "f1": 0.5385
+      },
+      {
+        "action": "REFUSE",
+        "precision": 0.9629,
+        "recall": 0.9714,
+        "f1": 0.9671
+      }
+    ],
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        16,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        202,
+        5,
+        23,
+        10,
+        21
+      ],
+      [
+        7,
+        14,
+        367,
+        4,
+        19,
+        13
+      ],
+      [
+        0,
+        23,
+        0,
+        111,
+        0,
+        0
+      ],
+      [
+        0,
+        6,
+        12,
+        1,
+        28,
+        0
+      ],
+      [
+        1,
+        3,
+        13,
+        9,
+        0,
+        882
+      ]
+    ],
+    "predicted_action_counts": {
+      "ANSWER_FULLY": 18,
+      "REDACT": 248,
+      "SUMMARIZE": 413,
+      "REQUEST_AUTHORIZATION": 148,
+      "ESCALATE_HUMAN": 57,
+      "REFUSE": 916
+    },
+    "baseline_accuracy": 1.0,
+    "raw_model_unsafe_disclosure_rate": 0.0006,
+    "unsafe_disclosure_rate": 0.0,
+    "policy_compliance_rate": 1.0,
+    "budget_exhaustion_cases": 47,
+    "budget_exhaustion_escalation_rate": 1.0,
+    "task_utility": 0.345,
+    "evaluation_runtime_ms": 2.91,
+    "model_loading_status": "checkpoint saved and loaded successfully before held-out evaluation",
+    "split_seed": 20261012,
+    "training_samples": 8400,
+    "feature_names": [
+      "sensitivity",
+      "authorization",
+      "task_utility",
+      "remaining_budget_fraction",
+      "secret_indicator"
+    ],
+    "synthetic_data_warning": "Synthetic heuristic-label evaluation; not a real-world privacy guarantee."
+  }
+}

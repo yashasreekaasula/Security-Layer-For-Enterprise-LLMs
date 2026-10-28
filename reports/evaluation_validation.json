@@ -1,0 +1,120 @@
+{
+  "samples": 1800,
+  "accuracy": 0.885,
+  "macro_f1": 0.7392,
+  "per_action": [
+    {
+      "action": "ANSWER_FULLY",
+      "precision": 0.7059,
+      "recall": 0.4,
+      "f1": 0.5106
+    },
+    {
+      "action": "REDACT",
+      "precision": 0.8413,
+      "recall": 0.7972,
+      "f1": 0.8187
+    },
+    {
+      "action": "SUMMARIZE",
+      "precision": 0.8936,
+      "recall": 0.873,
+      "f1": 0.8832
+    },
+    {
+      "action": "REQUEST_AUTHORIZATION",
+      "precision": 0.6336,
+      "recall": 0.7411,
+      "f1": 0.6831
+    },
+    {
+      "action": "ESCALATE_HUMAN",
+      "precision": 0.5818,
+      "recall": 0.5714,
+      "f1": 0.5766
+    },
+    {
+      "action": "REFUSE",
+      "precision": 0.9524,
+      "recall": 0.974,
+      "f1": 0.963
+    }
+  ],
+  "confusion_matrix": [
+    [
+      12,
+      0,
+      18,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      228,
+      4,
+      34,
+      2,
+      18
+    ],
+    [
+      2,
+      10,
+      378,
+      0,
+      21,
+      22
+    ],
+    [
+      0,
+      27,
+      0,
+      83,
+      0,
+      2
+    ],
+    [
+      2,
+      5,
+      13,
+      3,
+      32,
+      1
+    ],
+    [
+      1,
+      1,
+      10,
+      11,
+      0,
+      860
+    ]
+  ],
+  "predicted_action_counts": {
+    "ANSWER_FULLY": 17,
+    "REDACT": 271,
+    "SUMMARIZE": 423,
+    "REQUEST_AUTHORIZATION": 131,
+    "ESCALATE_HUMAN": 55,
+    "REFUSE": 903
+  },
+  "baseline_accuracy": 1.0,
+  "raw_model_unsafe_disclosure_rate": 0.0017,
+  "unsafe_disclosure_rate": 0.0,
+  "policy_compliance_rate": 1.0,
+  "budget_exhaustion_cases": 56,
+  "budget_exhaustion_escalation_rate": 1.0,
+  "task_utility": 0.3622,
+  "evaluation_runtime_ms": 3.48,
+  "model_loading_status": "checkpoint saved and loaded successfully before held-out evaluation",
+  "split_seed": 20261012,
+  "training_samples": 8400,
+  "feature_names": [
+    "sensitivity",
+    "authorization",
+    "task_utility",
+    "remaining_budget_fraction",
+    "secret_indicator"
+  ],
+  "synthetic_data_warning": "Synthetic heuristic-label evaluation; not a real-world privacy guarantee."
+}

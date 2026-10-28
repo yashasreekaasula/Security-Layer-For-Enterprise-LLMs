@@ -1,0 +1,52 @@
+{
+  "data_validation": "PASS",
+  "employees": 3000,
+  "unique_employee_ids": 3000,
+  "unique_emails": 3000,
+  "departments": 10,
+  "knowledge_documents": 50000,
+  "unique_titles": 50000,
+  "unique_contents": 50000,
+  "projects": 26,
+  "document_types": 20,
+  "backend_pytest": "27 passed",
+  "end_to_end_acceptance": "PASS; see end_to_end_smoke.txt",
+  "frontend_source_smoke": "4 assertions passed",
+  "frontend_tsx_syntax": "PASS (TypeScript transpile syntax diagnostics)",
+  "frontend_production_build": "NOT VERIFIED; npm install timed out in the build environment before dependencies could be installed",
+  "sqlite_alembic_migration": "PASS on temporary SQLite database",
+  "postgresql_docker": "NOT RUN",
+  "ppo_validation": {
+    "samples": 1800,
+    "accuracy": 0.885,
+    "macro_f1": 0.7392,
+    "policy_compliance_rate": 1.0,
+    "raw_model_unsafe_disclosure_rate": 0.0017,
+    "unsafe_disclosure_rate": 0.0,
+    "budget_exhaustion_escalation_rate": 1.0,
+    "task_utility": 0.3622,
+    "baseline_accuracy": 1.0,
+    "model_loading_status": "checkpoint saved and loaded successfully before held-out evaluation"
+  },
+  "ppo_test": {
+    "samples": 1800,
+    "accuracy": 0.8889,
+    "macro_f1": 0.7363,
+    "policy_compliance_rate": 1.0,
+    "raw_model_unsafe_disclosure_rate": 0.0006,
+    "unsafe_disclosure_rate": 0.0,
+    "budget_exhaustion_escalation_rate": 1.0,
+    "task_utility": 0.345,
+    "baseline_accuracy": 1.0,
+    "model_loading_status": "checkpoint saved and loaded successfully before held-out evaluation"
+  },
+  "limitations": [
+    "Metrics are based on synthetic heuristic labels, not real-world privacy guarantees.",
+    "The rule-based baseline has 100% accuracy because it defines the synthetic labels.",
+    "Frontend npm production build and Docker/PostgreSQL execution were not verified in this environment.",
+    "Synthetic employee activation by matching directory fields is demo-only; production requires verified SSO or approved one-time activation."
+  ],
+  "model_checkpoint_load": "PASS",
+  "final_data_validation": "PASS; see data_validation.json",
+  "employee_exports": "PASS; 3,000 rows in CSV and 3,000 data rows in XLSX; no password fields; no pre-activated accounts"
+}
